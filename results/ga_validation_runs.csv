@@ -1,0 +1,11 @@
+controller,total_arrivals,total_served,vehicles_remaining,average_wait_sec,max_queue_ns,max_queue_ew,controller_name,seed
+fuzzy,263,254,9,22.43,29,17,Fuzzy,42
+fuzzy,297,294,3,49.62,30,25,Fuzzy,123
+fuzzy,292,286,6,32.37,29,23,Fuzzy,456
+fuzzy,298,294,4,33.51,30,19,Fuzzy,789
+fuzzy,261,260,1,19.07,31,14,Fuzzy,2026
+fuzzy,263,256,7,22.84,29,17,GA-Fuzzy,42
+fuzzy,297,295,2,41.9,30,25,GA-Fuzzy,123
+fuzzy,292,289,3,32.54,29,23,GA-Fuzzy,456
+fuzzy,298,294,4,34.53,30,21,GA-Fuzzy,789
+fuzzy,261,259,2,21.84,31,13,GA-Fuzzy,2026

@@ -1,0 +1,3 @@
+controller_name,average_wait_sec,total_served,vehicles_remaining,max_queue_ns,max_queue_ew
+Fuzzy,31.4,277.6,4.6,29.8,19.6
+GA-Fuzzy,30.73,278.6,3.6,29.8,19.8

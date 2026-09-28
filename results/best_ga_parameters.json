@@ -1,0 +1,17 @@
+{
+    "best_fitness": 65.92666666666666,
+    "parameters": {
+        "q_low_end": 47,
+        "q_med_left": 14,
+        "q_med_peak": 75,
+        "q_med_right": 85,
+        "q_high_start": 60,
+        "w_short_end": 129,
+        "w_med_left": 39,
+        "w_med_peak": 190,
+        "w_med_right": 252,
+        "w_long_start": 113,
+        "min_green": 14,
+        "max_green": 64
+    }
+}

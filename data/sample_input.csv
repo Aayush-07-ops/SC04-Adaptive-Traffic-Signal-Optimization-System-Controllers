@@ -1,0 +1,1 @@
+state_id,queue_ns,queue_ew,density_ns_pct,density_ew_pct,max_wait_ns_sec,max_wait_ew_sec,emergency_direction

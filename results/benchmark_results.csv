@@ -1,0 +1,11 @@
+controller,total_arrivals,total_served,vehicles_remaining,average_wait_sec,max_queue_ns,max_queue_ew,seed
+fixed,263,254,9,32.17,29,14,42
+fuzzy,263,254,9,22.43,29,17,42
+fixed,297,262,35,81.44,42,20,123
+fuzzy,297,294,3,49.62,30,25,123
+fixed,292,258,34,65.74,37,12,456
+fuzzy,292,286,6,32.37,29,23,456
+fixed,298,286,12,27.41,30,16,789
+fuzzy,298,294,4,33.51,30,19,789
+fixed,261,256,5,32.52,31,12,2026
+fuzzy,261,260,1,19.07,31,14,2026

@@ -1,0 +1,3 @@
+controller,average_wait_sec,total_served,vehicles_remaining,max_queue_ns,max_queue_ew
+fixed,47.856,263.2,19.0,33.8,14.8
+fuzzy,31.4,277.6,4.6,29.8,19.6
