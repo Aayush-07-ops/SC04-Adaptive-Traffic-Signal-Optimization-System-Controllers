@@ -16,7 +16,6 @@ REQUIRED = [
 ]
 
 NUMERIC = [
-    "state_id",
     "queue_ns",
     "queue_ew",
     "density_ns_pct",
