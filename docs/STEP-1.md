@@ -260,3 +260,101 @@ Example command:
 
 ```bash
 python -m pytest tests/test_validator.py -v
+
+
+---
+
+# Product V1 Screen Sketch
+
+The Product V1 interface represents one simple two-phase junction.
+
+The screen should contain:
+
+1. Traffic input fields:
+   - NS queue
+   - EW queue
+   - NS density
+   - EW density
+   - NS maximum waiting time
+   - EW maximum waiting time
+   - Emergency direction
+
+2. Controller result:
+   - Next phase
+   - Green duration
+
+3. Explanation:
+   - Main traffic conditions influencing the result
+   - Whether an emergency override was applied
+   - Controller used
+
+4. Validation/errors:
+   - Missing input
+   - Negative queue
+   - Density outside 0–100
+   - Waiting time outside the configured range
+   - Invalid emergency direction
+
+The Product V1 screen sketch is stored at:
+
+`docs/product-v1-sketch.png`
+
+---
+
+# Risks and Assumptions
+
+## Risks
+
+- The simulation represents a simplified two-phase junction.
+- Simulated traffic conditions may not represent real-world traffic behavior.
+- Fixed-time baseline thresholds are temporary comparison assumptions.
+- Fuzzy-controller performance depends on membership functions and parameters.
+- Genetic Algorithm results depend on the selected search space, population,
+  fitness function, and random seeds.
+- Emergency handling in the prototype is a test-version safety override and
+  is not a live traffic-control implementation.
+
+## Assumptions
+
+- Queue values represent the number of waiting vehicles.
+- Density is represented as a percentage from 0 to 100.
+- Waiting time is represented in seconds.
+- Emergency direction is one of `none`, `NS`, or `EW`.
+- The system studies one simple two-phase junction.
+- Generated traffic scenarios are simulated data.
+- Results are intended for project evaluation and research, not direct
+  deployment to a live traffic signal.
+
+---
+
+# Step 1 Completion Evidence
+
+The following evidence is maintained in the repository:
+
+## Repository
+
+- GitHub repository contains the Step 1 project files.
+- All required members should have repository access.
+
+## Documentation
+
+- `README.md`
+- `docs/STEP-1.md`
+- `data/README.md`
+- `docs/baseline-pseudocode.md`
+
+## Starter Data
+
+- `data/sample_input.csv`
+- 20 valid starter rows
+- 5 mandatory cases
+- 5 ordinary cases
+- 5 boundary cases
+- 5 difficult cases
+
+## Validation
+
+Run:
+
+```bash
+python src/validate_data.py
