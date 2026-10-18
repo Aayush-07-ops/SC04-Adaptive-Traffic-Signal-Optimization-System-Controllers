@@ -18,7 +18,7 @@ COLUMNS = [
 
 def make_data():
     return pd.DataFrame([{
-        "state_id": 1,
+        "state_id": "TRF-TEST-001",
         "queue_ns": 20,
         "queue_ew": 10,
         "density_ns_pct": 65,

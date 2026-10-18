@@ -96,7 +96,8 @@ Safety limits and temporary Step 1 assumptions are documented in
 │   └── app.py
 ├── data/
 │   ├── README.md
-│   └── sample_input.csv
+│   ├── sample_input.csv
+│   └── invalid_sample.csv
 ├── docs/
 │   ├── STEP-1.md
 │   ├── baseline-pseudocode.md

@@ -75,7 +75,7 @@ Missing values cause validation to fail rather than being silently replaced.
 | `next_phase` | Signal phase selected for the next green period | NS/EW | Must be either `NS` or `EW` |
 | `green_duration_sec` | Green time assigned to the selected phase | seconds | Must remain within the controller's configured safe minimum and maximum |
 
-The exact green-time limits are controller parameters and are treated as simulation assumptions rather than real-world signal-control limits.
+For the fuzzy controller, the repository defaults are 15 seconds minimum and 60 seconds maximum. The implementation clamps tuned parameters to a 10-second minimum through 70-second maximum, with at least a 10-second gap between the configured minimum and maximum. The fixed-time baseline uses 30 seconds per phase. These are simulation assumptions, not real-world signal-control limits.
 
 ---
 
@@ -220,7 +220,7 @@ The Step 1 starter dataset contains 20 valid rows:
 - 5 boundary-condition rows
 - 5 difficult-condition rows
 
-The deliberately invalid case is kept separately and is not mixed with the valid starter data.
+The deliberately invalid case is kept separately in `data/invalid_sample.csv` and is not mixed with the valid starter data.
 
 The validator checks:
 
@@ -260,6 +260,7 @@ Example command:
 
 ```bash
 python -m pytest tests/test_validator.py -v
+```
 
 
 ---
@@ -358,3 +359,9 @@ Run:
 
 ```bash
 python src/validate_data.py
+```
+
+Saved validation evidence:
+
+- `results/step1/validation-pass.png`
+- `results/step1/validation-fail.png`
