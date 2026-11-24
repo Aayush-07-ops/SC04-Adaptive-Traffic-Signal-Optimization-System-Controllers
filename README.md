@@ -1,6 +1,6 @@
 # SC04 - Adaptive Traffic Signal Optimization System
 
-> Soft Computing Capstone | Team: **[TEAM NAME]** | Course/Section: **[COURSE, SECTION]**
+> Soft Computing Capstone | Team: **[CONTROLLERS]** | Course/Section: **[B.Tech CSE(AI), SECTION 32]**
 
 ## One-sentence problem
 Given queues, density, waiting time, and emergency direction, choose the next phase and green duration.
@@ -14,13 +14,6 @@ The app will choose which direction gets green and for how long, using queue and
 - **M1 method:** a fuzzy controller compared with the fixed-time signal.
 - **M2 method:** Genetic Algorithm (GA) tuning of the controller, emergency and heavy-queue testing, deployed simulator.
 
-## Team and responsibilities
-| Member | Roll no. | First responsibility (Step 1) | GitHub username |
-|---|---|---|---|
-| [Member 1] | [roll] | Repository (+ Testing/UI if team of 3) | [@username] |
-| [Member 2] | [roll] | Data | [@username] |
-| [Member 3] | [roll] | Baseline | [@username] |
-| [Member 4] | [roll] | Testing/UI | [@username] |
 
 These are *first* responsibilities, not permanent silos. Every member must be able to explain all of Step 1.
 
