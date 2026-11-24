@@ -1,0 +1,8 @@
+file: data/invalid_input.csv
+shape: (1, 8)
+columns: ['state_id', 'queue_ns', 'queue_ew', 'density_ns_pct', 'density_ew_pct', 'max_wait_ns_sec', 'max_wait_ew_sec', 'emergency_direction']
+missing values: {'state_id': 0, 'queue_ns': 0, 'queue_ew': 0, 'density_ns_pct': 0, 'density_ew_pct': 0, 'max_wait_ns_sec': 0, 'max_wait_ew_sec': 0, 'emergency_direction': 0}
+
+EXPECTED FAIL - the invalid data was correctly rejected:
+  - row 2 (TRF-999): queue_ns = -4 is negative (queue must be >= 0 vehicles)
+  - row 2 (TRF-999): density_ns_pct = 140 is outside 0 to 100 percent

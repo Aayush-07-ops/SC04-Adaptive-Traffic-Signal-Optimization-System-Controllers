@@ -1,116 +1,77 @@
-# SC04 Adaptive Traffic Signal Optimization System
+# SC04 - Adaptive Traffic Signal Optimization System
 
-An adaptive traffic signal optimization system using fuzzy logic and
-genetic algorithms to improve traffic signal decisions based on
-traffic conditions.
+> Soft Computing Capstone | Team: **[TEAM NAME]** | Course/Section: **[COURSE, SECTION]**
 
-## Project Overview
+## One-sentence problem
+Given queues, density, waiting time, and emergency direction, choose the next phase and green duration.
 
-The system studies a simple two-phase traffic junction:
+## What this project is
+A small traffic-junction simulator for **one simple two-phase junction** (North-South = NS, East-West = EW).
+The app will choose which direction gets green and for how long, using queue and waiting-time information.
 
-- North-South (NS)
-- East-West (EW)
+- **User:** a traffic operator studying one simple two-phase junction.
+- **Baseline (Step 1):** a fixed-time signal (30 s NS, 30 s EW, alternating).
+- **M1 method:** a fuzzy controller compared with the fixed-time signal.
+- **M2 method:** Genetic Algorithm (GA) tuning of the controller, emergency and heavy-queue testing, deployed simulator.
 
-The system uses traffic state information such as:
+## Team and responsibilities
+| Member | Roll no. | First responsibility (Step 1) | GitHub username |
+|---|---|---|---|
+| [Member 1] | [roll] | Repository (+ Testing/UI if team of 3) | [@username] |
+| [Member 2] | [roll] | Data | [@username] |
+| [Member 3] | [roll] | Baseline | [@username] |
+| [Member 4] | [roll] | Testing/UI | [@username] |
 
-- Queue length
-- Traffic density
-- Maximum waiting time
-- Emergency direction
+These are *first* responsibilities, not permanent silos. Every member must be able to explain all of Step 1.
 
-The objective is to choose the next traffic phase and an appropriate
-green duration while respecting defined safety limits.
+## Project path (eight steps)
+| Step | Stage | What happens | Status |
+|---|---|---|---|
+| 1 | M1 | Define one simple two-phase junction | **In progress** |
+| 2 | M1 | Generate and validate traffic states (10,000+) | Not started |
+| 3 | M1 | Build the fixed-time signal and queue updates | Not started |
+| 4 | M1 | Build fuzzy phase priority and green duration | Not started |
+| 5 | M1 | Create the working junction Product V1 | Not started |
+| 6 | M2 | Use GA to tune controller parameters | Not started |
+| 7 | M2 | Compare controllers in difficult traffic cases | Not started |
+| 8 | M2 | Deploy Product V2 and finish all evidence | Not started |
 
-## Problem Statement
+## Repository layout
+```
+README.md                  <- you are here
+requirements.txt           <- Python packages
+docs/STEP-1.md             <- Step 1 project contract
+docs/baseline-pseudocode.md
+docs/test-cases.md         <- five mandatory cases + one invalid case
+docs/product-v1-sketch.png <- Product V1 screen sketch
+docs/git-workflow.md       <- commit plan and Git help
+docs/faculty-demo-script.md
+data/README.md             <- field meanings, units, sources, assumptions
+data/sample_input.csv      <- 20 valid starter rows
+data/invalid_input.csv     <- deliberately wrong row (kept separate)
+src/validate_data.py       <- data validator
+src/baseline.py            <- tiny runnable fixed-time baseline
+notebooks/  app/  report/  <- used in later steps
+results/step1/             <- validation logs, baseline output, screenshots
+```
 
-Given queues, density, waiting time, and emergency direction, choose
-the next phase and green duration.
+## How to run (from a fresh clone)
+```bash
+git clone <REPOSITORY-URL>
+cd <REPOSITORY-NAME>
+python -m venv .venv
+# Windows PowerShell:  .venv\Scripts\Activate.ps1
+# macOS/Linux:         source .venv/bin/activate
+pip install -r requirements.txt
 
-## User
+python src/validate_data.py                                         # expect: PASS
+python src/validate_data.py --file data/invalid_input.csv --expect-fail   # expect: EXPECTED FAIL
+python src/baseline.py                                              # prints baseline decisions
+```
 
-The Product V1 is designed for a traffic operator studying one simple
-two-phase junction.
+## Honest data statement
+All Step 1 rows are **hand-written teaching/test values, not real measured traffic data.**
+The 10,000+ records required later will come from a reproducible simulator (Step 2) and will be labelled as simulated.
 
-## Project Approach
-
-### Baseline
-
-A fixed-time controller is used as the baseline:
-
-- NS green for 30 seconds
-- EW green for 30 seconds
-- Continue alternating between the two phases
-- Apply an explicit safety override for emergency cases
-
-### M1 — Fuzzy Controller
-
-A fuzzy-logic controller uses traffic conditions to determine phase
-priority and green duration.
-
-The fuzzy controller is compared with the fixed-time baseline.
-
-### M2 — Genetic Algorithm
-
-A Genetic Algorithm is used to tune controller parameters.
-
-M2 also includes:
-
-- Difficult-case testing
-- Parameter experiments
-- Controller comparison
-- Deployment of the final system
-
-## Input Data
-
-The main traffic-state fields are:
-
-| Field | Meaning |
-|---|---|
-| `state_id` | Unique traffic state identifier |
-| `queue_ns` | North-South queue length in vehicles |
-| `queue_ew` | East-West queue length in vehicles |
-| `density_ns_pct` | North-South traffic density percentage |
-| `density_ew_pct` | East-West traffic density percentage |
-| `max_wait_ns_sec` | Maximum North-South waiting time in seconds |
-| `max_wait_ew_sec` | Maximum East-West waiting time in seconds |
-| `emergency_direction` | Emergency direction: `none`, `NS`, or `EW` |
-
-See `data/README.md` for the complete field definitions,
-validation rules, sources, and assumptions.
-
-## Outputs
-
-The controller produces:
-
-- `next_phase` — `NS` or `EW`
-- `green_duration_sec` — selected green duration in seconds
-
-Safety limits and temporary Step 1 assumptions are documented in
-`docs/STEP-1.md`.
-
-## Repository Structure
-
-```text
-.
-├── app/
-│   └── app.py
-├── data/
-│   ├── README.md
-│   ├── sample_input.csv
-│   └── invalid_sample.csv
-├── docs/
-│   ├── STEP-1.md
-│   ├── baseline-pseudocode.md
-│   └── product-v1-sketch.png
-├── notebooks/
-├── report/
-├── results/
-├── src/
-│   ├── validate_data.py
-│   ├── baseline.py
-│   ├── fuzzy_controller.py
-│   ├── genetic_algorithm.py
-│   └── ...
-├── tests/
-├── requirements.txt
-└── README.md
+## Step 1 checklist
+See `docs/STEP-1.md` -> "Step 1 completion evidence".

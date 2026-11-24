@@ -1,0 +1,21 @@
+state_id,baseline_next_phase,baseline_green_duration_sec,rule_used
+TRF-001,NS,30,Rules 1-3: fixed alternation (queues ignored)
+TRF-002,EW,30,Rules 1-3: fixed alternation (queues ignored)
+TRF-003,NS,30,Rules 1-3: fixed alternation (queues ignored)
+TRF-004,EW,30,Rules 1-3: fixed alternation (queues ignored)
+TRF-005,EW,30,Rule 4: emergency safety override
+TRF-006,EW,30,Rules 1-3: fixed alternation (queues ignored)
+TRF-007,NS,30,Rules 1-3: fixed alternation (queues ignored)
+TRF-008,EW,30,Rules 1-3: fixed alternation (queues ignored)
+TRF-009,NS,30,Rules 1-3: fixed alternation (queues ignored)
+TRF-010,EW,30,Rules 1-3: fixed alternation (queues ignored)
+TRF-011,NS,30,Rules 1-3: fixed alternation (queues ignored)
+TRF-012,EW,30,Rules 1-3: fixed alternation (queues ignored)
+TRF-013,NS,30,Rules 1-3: fixed alternation (queues ignored)
+TRF-014,EW,30,Rules 1-3: fixed alternation (queues ignored)
+TRF-015,NS,30,Rules 1-3: fixed alternation (queues ignored)
+TRF-016,EW,30,Rules 1-3: fixed alternation (queues ignored)
+TRF-017,NS,30,Rule 4: emergency safety override
+TRF-018,EW,30,Rule 4: emergency safety override
+TRF-019,NS,30,Rules 1-3: fixed alternation (queues ignored)
+TRF-020,NS,30,Rule 4: emergency safety override
