@@ -68,3 +68,14 @@ The 10,000+ records required later will come from a reproducible simulator (Step
 
 ## Step 1 checklist
 See `docs/STEP-1.md` -> "Step 1 completion evidence".
+
+## Step 2 - Generated scenarios
+- File: data/generated/traffic_scenarios_10000.csv (10,000 valid rows, seed 42)
+- All rows are GENERATED scenarios, not real field observations.
+- Extra column: scenario_type (normal, boundary, stress, difficult, emergency)
+- Mix: normal 5000, boundary 1500, stress 1500, difficult 1500, emergency 500
+- Assumptions (temporary): max queue 60 vehicles, max wait 300 s,
+  density rises with queue length plus noise, wait rises with queue length plus offset
+- Invalid test rows: data/generated/invalid_test_scenarios.csv (120 rows, each breaks one rule)
+- Generator: src/generate_scenarios.py | Validator: src/validate_data.py
+- Report: data/reports/scenario_quality_report.md
