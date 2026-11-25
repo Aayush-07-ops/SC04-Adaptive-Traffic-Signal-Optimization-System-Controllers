@@ -1,0 +1,3 @@
+model,accuracy,precision_NS,recall_NS,f1_NS,f1_macro,emergency_compliance,green_bounds_compliance,mean_green_sec,std_green_sec,min_green_sec,max_green_sec
+Fixed-Time Baseline,0.5733,0.5935,0.5661,0.5795,0.5732,1.0,1.0,30.0,0.0,30.0,30.0
+Mamdani Fuzzy Controller,0.8827,0.8812,0.8947,0.8879,0.8824,1.0,1.0,33.2587,11.9998,15.33,54.67
