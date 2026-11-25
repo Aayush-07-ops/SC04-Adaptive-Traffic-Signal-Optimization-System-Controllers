@@ -35,3 +35,6 @@ traitlets==5.16.1
 typing_extensions==4.16.0
 tzdata==2026.6
 wcwidth==0.9.5
+scikit-fuzzy==0.5.0
+scikit-learn==1.9.0
+scipy==1.18.0

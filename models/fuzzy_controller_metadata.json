@@ -1,0 +1,97 @@
+{
+  "project": "SC04 - Adaptive Traffic Signal Optimization System",
+  "step": "Step 3 - Mamdani Fuzzy Logic Controller",
+  "technique": "Mamdani Fuzzy Inference System + Centroid Defuzzification + Emergency Safety Override",
+  "features": [
+    "queue_ns",
+    "queue_ew",
+    "density_ns_pct",
+    "density_ew_pct",
+    "max_wait_ns_sec",
+    "max_wait_ew_sec",
+    "emergency_direction"
+  ],
+  "outputs": [
+    "next_phase",
+    "green_duration_sec"
+  ],
+  "green_bounds_sec": [
+    10.0,
+    60.0
+  ],
+  "fuzzy_rules_count": 27,
+  "random_seed": 42,
+  "data_splits": {
+    "train_rows": 7000,
+    "validation_rows": 1500,
+    "test_rows": 1500,
+    "honesty_note": "All 10,000 rows are generated scenarios (not real traffic observations)."
+  },
+  "metrics": [
+    {
+      "split": "validation",
+      "rows": 1500,
+      "accuracy": 0.8827,
+      "precision_ns": 0.8687,
+      "recall_ns": 0.9012,
+      "f1_score_ns": 0.8847,
+      "f1_macro": 0.8826,
+      "emergency_compliance": 1.0,
+      "green_bounds_compliance": 1.0,
+      "mean_green_sec": 33.23
+    },
+    {
+      "split": "test",
+      "rows": 1500,
+      "accuracy": 0.8827,
+      "precision_ns": 0.8812,
+      "recall_ns": 0.8947,
+      "f1_score_ns": 0.8879,
+      "f1_macro": 0.8824,
+      "emergency_compliance": 1.0,
+      "green_bounds_compliance": 1.0,
+      "mean_green_sec": 33.26
+    }
+  ],
+  "test_green_by_scenario_type": {
+    "boundary": {
+      "count": 225,
+      "mean": 35.99,
+      "min": 15.33,
+      "max": 54.67
+    },
+    "difficult": {
+      "count": 225,
+      "mean": 30.72,
+      "min": 18.8,
+      "max": 53.93
+    },
+    "emergency": {
+      "count": 75,
+      "mean": 28.55,
+      "min": 15.33,
+      "max": 49.96
+    },
+    "normal": {
+      "count": 750,
+      "mean": 27.49,
+      "min": 15.33,
+      "max": 38.28
+    },
+    "stress": {
+      "count": 225,
+      "mean": 53.86,
+      "min": 45.41,
+      "max": 54.67
+    }
+  },
+  "invalid_rejection": {
+    "step1_invalid_rejected": true,
+    "step1_invalid_errors": [
+      "Negative queue length found",
+      "Density outside 0-100 % found"
+    ],
+    "step2_invalid_total": 120,
+    "step2_invalid_rejected": 120
+  }
+}
