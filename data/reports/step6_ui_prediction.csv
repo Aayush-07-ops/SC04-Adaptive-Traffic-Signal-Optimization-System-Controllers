@@ -1,0 +1,2 @@
+state_id,queue_ns,queue_ew,density_ns_pct,density_ew_pct,max_wait_ns_sec,max_wait_ew_sec,emergency_direction,scenario_type,urgency_ns,urgency_ew,fuzzy_next_phase,fuzzy_green_duration_sec,decision_mode
+SCN-00773,9,39,9.7,61.1,297,128,none,difficult,69.76,63.71,NS,26.93,fuzzy_urgency
