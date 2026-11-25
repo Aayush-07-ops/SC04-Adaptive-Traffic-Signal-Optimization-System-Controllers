@@ -117,7 +117,30 @@ All **17 / 17** automated checks passed (`failed_checks = 0`).
 
 ---
 
-## 6. Evidence Files
+## 6. UI Screenshots
+
+### 6.1 Normal Input — Saved Fuzzy Model Decision
+![Normal Preset Signal Plan](../results/step5/step5_ui_normal.png)
+
+### 6.2 Invalid Input — Safe Validation Rejection
+![Invalid Input Validation Error](../results/step5/step5_ui_invalid.png)
+
+### 6.3 Batch CSV Validation & Inference (`data/sample_input.csv`)
+![Batch CSV Validation](../results/step5/step5_ui_batch.png)
+
+---
+
+## 7. Member Contributions
+
+| Member | Role / Contributions |
+|---|---|
+| **Aayush Jha (`Aayush-07-ops`)** | Product V1 Streamlit UI (`app/app.py`), saved-model service & validation layer (`src/product_v1_service.py`), automated Step 5 test suite (`src/test_step5_product_v1.py`), UI screenshot verification, and `docs/STEP-5.md` report |
+
+*(Add any additional team members and their specific commits/contributions here if applicable.)*
+
+---
+
+## 8. Evidence Files
 
 | File | Description |
 |---|---|
@@ -126,4 +149,7 @@ All **17 / 17** automated checks passed (`failed_checks = 0`).
 | `src/test_step5_product_v1.py` | Automated Step 5 verification suite |
 | `results/step5/step5_test_evidence.csv` | Row-by-row test evidence (17 checks) |
 | `results/step5/step5_test_summary.json` | Aggregated pass/fail summary |
+| `results/step5/step5_ui_normal.png` | Screenshot: Normal preset fuzzy signal decision |
+| `results/step5/step5_ui_invalid.png` | Screenshot: Invalid input safe rejection |
+| `results/step5/step5_ui_batch.png` | Screenshot: Batch CSV validation on 20 mandatory cases |
 | `docs/STEP-5.md` | Step 5 report |
