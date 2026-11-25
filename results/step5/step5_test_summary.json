@@ -1,0 +1,31 @@
+{
+  "total_checks": 17,
+  "passed_checks": 17,
+  "failed_checks": 0,
+  "by_category": {
+    "batch_csv": {
+      "total": 2,
+      "passed": 2
+    },
+    "boundary": {
+      "total": 3,
+      "passed": 3
+    },
+    "invalid_input": {
+      "total": 7,
+      "passed": 7
+    },
+    "missing_model": {
+      "total": 1,
+      "passed": 1
+    },
+    "normal": {
+      "total": 3,
+      "passed": 3
+    },
+    "ui_vs_code": {
+      "total": 1,
+      "passed": 1
+    }
+  }
+}

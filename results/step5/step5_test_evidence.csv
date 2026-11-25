@@ -1,0 +1,18 @@
+category,case_id,expected,actual,passed,detail
+normal,NORM-01,"status=ok, phase=NS, green in [10,60]","status=ok, phase=NS, green=32.84",True,"North-South (NS) received higher fuzzy urgency (46.1/100 vs 11.8/100 for East-West (EW)) based on queue, density, and max wait time. The green-duration FIS assigned 32.84 seconds (bounded to 10-60 s), compared to a rigid 30 s fixed-time baseline."
+normal,NORM-02,"status=ok, phase=EW, green in [10,60]","status=ok, phase=EW, green=42.77",True,"East-West (EW) received higher fuzzy urgency (57.3/100 vs 11.7/100 for North-South (NS)) based on queue, density, and max wait time. The green-duration FIS assigned 42.77 seconds (bounded to 10-60 s), compared to a rigid 30 s fixed-time baseline."
+normal,NORM-03-EMERG,"status=ok, phase=NS, green in [10,60]","status=ok, phase=NS, green=15.33",True,"Emergency vehicle detected on NS. Safety override bypassed normal urgency competition and assigned immediate GREEN to NS for 15.33 seconds (fuzzy urgency scores: NS=11.7, EW=76.3)."
+boundary,BND-01-ZERO,"status=ok, phase=NS, green in [10,60]","status=ok, phase=NS, green=15.33",True,"urgency_ns=11.7, urgency_ew=11.7"
+boundary,BND-02-MAX-EW,"status=ok, phase=EW, green in [10,60]","status=ok, phase=EW, green=54.67",True,"urgency_ns=11.7, urgency_ew=88.97"
+boundary,BND-03-ALL-MAX,"status=ok, phase=NS, green in [10,60]","status=ok, phase=NS, green=54.67",True,"urgency_ns=88.97, urgency_ew=88.97"
+invalid_input,INV-01-MISSING,status=validation_error with >=1 error,"status=validation_error, errors=1",True,queue_ns: value is missing (expected 0 to 100 vehicles).
+invalid_input,INV-02-NONNUM,status=validation_error with >=1 error,"status=validation_error, errors=1",True,queue_ew: 'abc' is not a valid number.
+invalid_input,INV-03-NEG-QUEUE,status=validation_error with >=1 error,"status=validation_error, errors=1",True,queue_ns: -5 vehicles is out of range (allowed: 0 to 100 vehicles).
+invalid_input,INV-04-HIGH-DENS,status=validation_error with >=1 error,"status=validation_error, errors=1",True,density_ns_pct: 140 % is out of range (allowed: 0 to 100 %).
+invalid_input,INV-05-HIGH-WAIT,status=validation_error with >=1 error,"status=validation_error, errors=1",True,max_wait_ns_sec: 450 seconds is out of range (allowed: 0 to 300 seconds).
+invalid_input,INV-06-BAD-EMERG,status=validation_error with >=1 error,"status=validation_error, errors=1",True,"emergency_direction: 'BOTH' is invalid (allowed: none, NS, EW)."
+invalid_input,INV-07-NAN,status=validation_error with >=1 error,"status=validation_error, errors=1",True,density_ew_pct: value must be finite (not NaN or Inf).
+missing_model,MOD-01-MISSING,status=model_error without crash,status=model_error,True,Saved fuzzy controller file not found at 'C:\Users\ankus\Desktop\New folder\models\does_not_exist_step5.pkl'. Run `python src/step3_fuzzy_controller.py` to generate and save the model.
+ui_vs_code,PARITY-01,0 mismatches across 5 sample rows,0 mismatches,True,"Exact match on next_phase, green_duration_sec, urgency_ns, urgency_ew"
+batch_csv,BATCH-01-SAMPLE,"valid=20, rejected=0","valid=20, rejected=0",True,All 20 mandatory sample rows validated and predicted
+batch_csv,BATCH-02-INVALID,"valid=0, rejected=120","valid=0, rejected=120",True,All invalid test rows rejected with per-row reasons

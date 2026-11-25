@@ -38,3 +38,4 @@ wcwidth==0.9.5
 scikit-fuzzy==0.5.0
 scikit-learn==1.9.0
 scipy==1.18.0
+streamlit==1.67.0
